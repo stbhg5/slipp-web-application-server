@@ -9,6 +9,7 @@ import java.io.InputStream;
 import org.junit.Test;
 
 public class HttpRequestTest {
+    
     private String testDirectory = "./src/test/resources/";
 
     @Test
@@ -32,4 +33,5 @@ public class HttpRequestTest {
         assertEquals("keep-alive", request.getHeader("Connection"));
         assertEquals("javajigi", request.getParameter("userId"));
     }
+    
 }
