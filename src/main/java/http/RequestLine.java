@@ -13,25 +13,25 @@ public class RequestLine {
     private Map<String, String> params = new HashMap<String, String>();
 
     public RequestLine(String requestLine) {
-		log.debug("request line : {}", requestLine);
-		String[] tokens = requestLine.split(" ");
-		if (tokens.length != 3) {
-			throw new IllegalArgumentException(requestLine + "이 형식에 맞지 않습니다.");
-		}
-		method = tokens[0];
-		if ("POST".equals(method)) {
-			path = tokens[1];
-			return;
-		}
+    	log.debug("request line : {}", requestLine);
+    	String[] tokens = requestLine.split(" ");
+    	if (tokens.length != 3) {
+    		throw new IllegalArgumentException(requestLine + "이 형식에 맞지 않습니다.");
+    	}
+    	method = tokens[0];
+    	if ("POST".equals(method)) {
+    		path = tokens[1];
+    		return;
+    	}
 
-		int index = tokens[1].indexOf("?");
-		if (index == -1) {
-			path = tokens[1];
-		} else {
-			path = tokens[1].substring(0, index);
-			params = HttpRequestUtils.parseQueryString(tokens[1].substring(index + 1));
-		}
-	}
+    	int index = tokens[1].indexOf("?");
+    	if (index == -1) {
+    		path = tokens[1];
+    	} else {
+    		path = tokens[1].substring(0, index);
+    		params = HttpRequestUtils.parseQueryString(tokens[1].substring(index + 1));
+    	}
+    }
 
     public String getMethod() {
         return method;
