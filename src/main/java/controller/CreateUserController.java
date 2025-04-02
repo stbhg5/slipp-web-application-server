@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 
 import db.DataBase;
 
-public class CreateUserController extends AbstractController {
+public class CreateUserController implements Controller {
 
     private static final Logger log = LoggerFactory.getLogger(CreateUserController.class);
 
@@ -20,5 +20,5 @@ public class CreateUserController extends AbstractController {
         DataBase.addUser(user);
         response.sendRedirect("/index.html");
     }
-    
+
 }
