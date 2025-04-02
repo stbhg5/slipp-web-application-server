@@ -10,7 +10,7 @@ import model.User;
 import util.HttpRequestUtils;
 import db.DataBase;
 
-public class ListUserController extends AbstractController {
+public class ListUserController implements Controller {
 
     @Override
     public void doGet(HttpRequest request, HttpResponse response) {
@@ -41,5 +41,5 @@ public class ListUserController extends AbstractController {
         }
         return Boolean.parseBoolean(value);
     }
-    
+
 }
