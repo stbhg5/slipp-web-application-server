@@ -5,7 +5,7 @@ import db.DataBase;
 import http.HttpRequest;
 import http.HttpResponse;
 
-public class LoginController extends AbstractController {
+public class LoginController implements Controller {
 
     @Override
     public void doPost(HttpRequest request, HttpResponse response) {
@@ -21,5 +21,5 @@ public class LoginController extends AbstractController {
             response.sendRedirect("/user/login_failed.html");
         }
     }
-    
+
 }
