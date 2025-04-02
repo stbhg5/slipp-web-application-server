@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import db.DataBase;
 
 public class CreateUserController extends AbstractController {
+
     private static final Logger log = LoggerFactory.getLogger(CreateUserController.class);
 
     @Override
@@ -19,4 +20,5 @@ public class CreateUserController extends AbstractController {
         DataBase.addUser(user);
         response.sendRedirect("/index.html");
     }
+    
 }
