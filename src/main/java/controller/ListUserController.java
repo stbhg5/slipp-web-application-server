@@ -10,8 +10,8 @@ import model.User;
 import util.HttpRequestUtils;
 import db.DataBase;
 
-public class ListUserController implements Controller {
-
+public class ListUserController extends AbstractController {
+    
     @Override
     public void doGet(HttpRequest request, HttpResponse response) {
         if (!isLogin(request.getHeader("Cookie"))) {
