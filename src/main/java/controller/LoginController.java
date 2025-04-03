@@ -5,7 +5,7 @@ import db.DataBase;
 import http.HttpRequest;
 import http.HttpResponse;
 
-public class LoginController implements Controller {
+public class LoginController extends AbstractController {
 
     @Override
     public void doPost(HttpRequest request, HttpResponse response) {
